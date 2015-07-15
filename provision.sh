@@ -25,3 +25,11 @@ sudo apt-get install -y autoconf bison build-essential libssl-dev libyaml-dev li
 # Rails installation
 echo "gem: --no-document" >> ~/.gemrc
 sudo gem install rails
+
+# Postgres9.4 installation
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+  sudo apt-key add -
+sudo apt-get update
+sudo apt-get install -y postgresql-9.4 libpq-dev
+sudo -u postgres createuser -d -r -s vagrant # Se crea un usuario superuser
