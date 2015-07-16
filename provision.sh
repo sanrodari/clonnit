@@ -23,6 +23,7 @@ sudo apt-get install -y ruby2.2 ruby2.2-dev
 sudo apt-get install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
 
 # Rails installation
+sudo apt-get install -y nodejs # JS Runtime installation 
 echo "gem: --no-document" >> ~/.gemrc
 sudo gem install rails
 
