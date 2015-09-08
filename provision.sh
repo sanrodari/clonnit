@@ -8,6 +8,7 @@ export LC_ALL=en_US.UTF-8
 perl -e exit # Verify is correct
 
 # Update the system
+sudo apt-get update
 sudo apt-get upgrade -y
 
 # Other packages
@@ -33,4 +34,4 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
   sudo apt-key add -
 sudo apt-get update
 sudo apt-get install -y postgresql-9.4 libpq-dev
-sudo -u postgres createuser -d -r -s vagrant # Se crea un usuario superuser
+sudo -u postgres createuser -d -r -s vagrant # Create a superuser to use the db
