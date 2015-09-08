@@ -21,5 +21,4 @@ User story format: "As a <role>, I want <goal/desire>[ so that <benefit>]"
 7. As a au, I want to upvote/downvote a post so that I can enforce good content
 8. As a au, I want to subscribe to a subclonnit so that I can customize my frontpage
 9. As a mu, I want to assign new mods to a subclonnit so that I can share the moderator labors
-10. As a mu, I want to ban an user from one of my mod subclonnits
-11. As a mu, I want to mark one of my mod subclonnits as a private
+10. As a mu, I want to delete a post from one of my moderated subclonnits
