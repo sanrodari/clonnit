@@ -1,9 +1,14 @@
+## Commands
+
+* rails new clonnit -d postgresql
+* bin/bundle
+
 ## Tasks
 
 https://trello.com/b/UoSGhf1y/clonnit
 
 ## User stories
 
-[User stories][1] 
+[User stories][1]
 
 1: docs/user-stories.md

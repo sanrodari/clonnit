@@ -2,9 +2,9 @@
 
 * Clonnit: The platform itself inspired by reddit
 * Subclonnit: A community around a particular subject
-* Frontpage: Collection of the default subclonnits for a anon, and for a au being its subscribed subclonnits 
-* Anonymous user (anon): Visiting user that has not give its credential information  
-* Authenticated user (au): Register user that has been successfully authenticated
+* Frontpage: Collection of the default subclonnits for a anon, and for a au it is its subscribed subclonnits
+* Anonymous user (anon): Visiting user that has not give its credential information
+* Authenticated user (au): Registered user that has been successfully authenticated
 * Mod user (mu): Moderator user of a subclonnit, when a user create a new subclonnit he becomes its first mod, and he can assign other mods as well
 * Either user (eu): Either a anon or a au.
 
