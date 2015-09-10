@@ -40,4 +40,7 @@ group :development, :test do
 
   # Quiet serving assets
   gem 'quiet_assets'
+
+  # To annotate models and other sources
+  gem 'annotate'
 end

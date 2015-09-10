@@ -9,7 +9,12 @@
 * bin/rake db:create
 * bin/rake db:migrate
 
-## Devise
+### Annotate gem
+
+* bin/rails g annotate:install
+* bin/rake annotate_models
+
+## Used devise modules
 
 * Database Authenticatable
 * Recoverable
