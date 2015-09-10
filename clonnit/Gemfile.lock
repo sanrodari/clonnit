@@ -39,6 +39,7 @@ GEM
     annotate (2.6.10)
       activerecord (>= 3.2, <= 4.3)
       rake (~> 10.4)
+    ansi (1.5.0)
     arel (6.0.2)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
@@ -82,6 +83,11 @@ GEM
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    minitest-reporters (1.1.0)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -120,6 +126,7 @@ GEM
     rdoc (4.2.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    ruby-progressbar (1.7.5)
     sass (3.4.16)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -165,6 +172,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  minitest-reporters
   pg
   quiet_assets
   rails (= 4.2.3)
