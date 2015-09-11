@@ -45,4 +45,20 @@ class UserRegistrationTest < ActionDispatch::IntegrationTest
     assert_includes user.errors.messages[:password_confirmation],
                     I18n.t('errors.messages.confirmation', attribute: 'Password')
   end
+
+  test 'require username' do
+    assert_difference('User.count', 0) do
+      post '/users', user: {
+        email:                 @test_email,
+        username:              '',
+        password:              '12345678',
+        password_confirmation: '12345678'
+      }
+    end
+
+    # Assert error message
+    user = assigns[:user]
+    assert_includes user.errors.messages[:username],
+                    I18n.t('errors.messages.blank')
+  end
 end

@@ -30,4 +30,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :timeoutable,
          authentication_keys: [:username]
+
+  # Validations
+  validates :username, presence: true
 end
