@@ -28,6 +28,10 @@
 * bin/rails g integration_test user_registration
 * bin/rails g migration add_username_to_users
 
+### User session
+
+* bin/rails g integration_test user_session
+
 ## Used devise modules
 
 * Database Authenticatable
