@@ -4,6 +4,7 @@
 
 * rails new clonnit -d postgresql
 * bin/bundle
+* bundle exec spring binstub --all
 
 ### Initial devise setup
 

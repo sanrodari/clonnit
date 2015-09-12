@@ -20,7 +20,20 @@ class UserSessionTest < ActionDispatch::IntegrationTest
       password: @user.password
     }
 
+    # Assert the user is in session
+    assert_equal @user.id, @controller.current_user.id
+
     # Assert flash message
-    assert_equal flash[:notice], I18n.t('devise.sessions.signed_in')
+    assert_equal I18n.t('devise.sessions.signed_in'), flash[:notice]
+  end
+
+  test 'wrong credentials' do
+    post '/users/sign_in', user: {
+      username: @user.username,
+      password: "wrong-#{@user.password}"
+    }
+
+    # Assert the user is not in session
+    assert_nil @controller.current_user
   end
 end

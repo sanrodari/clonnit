@@ -23,11 +23,11 @@ class UserRegistrationTest < ActionDispatch::IntegrationTest
     end
 
     # Assert flash message
-    assert_equal flash[:notice], I18n.t('devise.registrations.signed_up')
+    assert_equal I18n.t('devise.registrations.signed_up'), flash[:notice]
 
     # Assert is created with its params
     created_user = User.find_by(username: @test_username)
-    assert_equal created_user.email, @test_email
+    assert_equal @test_email, created_user.email
   end
 
   test 'wrong password confirmation' do
