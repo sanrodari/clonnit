@@ -13,5 +13,20 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  attr_reader :session_user
+
+  def setup
+    @session_user = User.create!(
+      email:    'test_email@example.com',
+      username: 'test_username',
+      password: '12345678'
+    )
+  end
+
+  def sign_in
+    post '/users/sign_in', user: {
+      username: @session_user.username,
+      password: @session_user.password
+    }
+  end
 end
