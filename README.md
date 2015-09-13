@@ -86,6 +86,7 @@ bin/rails g integration_test post_creation
 # A base for the implementation, then rm all the cruft
 bin/rails g scaffold post title url text:text user:belongs_to subclonnit:belongs_to
 RAILS_ENV=test bin/rake db:migrate
+bin/rails g migration add_not_null_title_to_posts
 ```
 
 ## Tasks

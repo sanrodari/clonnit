@@ -3,7 +3,7 @@
 # Table name: posts
 #
 #  id            :integer          not null, primary key
-#  title         :string
+#  title         :string           not null
 #  url           :string
 #  text          :text
 #  user_id       :integer
@@ -22,5 +22,6 @@ class Post < ActiveRecord::Base
   belongs_to :subclonnit
 
   # Validations
-  validates :url, format: URI.regexp(%w(http https))
+  validates :url,   format: URI.regexp(%w(http https))
+  validates :title, presence: true
 end
