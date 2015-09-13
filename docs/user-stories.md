@@ -15,7 +15,7 @@ User story format: "As a <role>, I want <goal/desire>[ so that <benefit>]"
 1. As a eu, I want to visualize the front page.
 2. As a anon, I want to register to clonnit so that I can have an account in it
 3. As a anon, I want to sign in to clonnit so that I can have a user session
-4. As a anon, I want to be able to recover my account giving my email
+4. As a anon, I want to be able to recover my account giving my username
 5. As a au, I want to create a subclonnit so that I can create and maintain a community
 6. As a au, I want to create a post within a subclonnit so that I can share my content with others
 7. As a au, I want to upvote/downvote a post so that I can enforce good content

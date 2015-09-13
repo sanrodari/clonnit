@@ -29,7 +29,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :omniauthable, :trackable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :timeoutable,
-         authentication_keys: [:username]
+         authentication_keys: [:username],
+         reset_password_keys: [:username]
 
   # Validations
   validates :username, presence: true

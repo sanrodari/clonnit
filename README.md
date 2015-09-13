@@ -33,6 +33,10 @@
 
 * bin/rails g integration_test user_session
 
+## Account recovering
+
+* bin/rails g integration_test account_recovering
+
 ## Used devise modules
 
 * Database Authenticatable
