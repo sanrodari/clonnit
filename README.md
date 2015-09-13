@@ -17,48 +17,66 @@
 
 ### Project creation
 
-* rails new clonnit -d postgresql
-* bin/bundle
-* bundle exec spring binstub --all
+```bash
+rails new clonnit -d postgresql
+bin/bundle
+bundle exec spring binstub --all
+```
 
 ### Initial devise setup
 
-* bin/rails g devise:install
-* bin/rails g devise user
-* bin/rails g devise:views
-* bin/rake db:create
-* bin/rake db:migrate
+```bash
+bin/rails g devise:install
+bin/rails g devise user
+bin/rails g devise:views
+bin/rake db:create
+bin/rake db:migrate
+```
 
 ### Annotate gem
 
-* bin/rails g annotate:install
-* bin/rake annotate_models
+```bash
+bin/rails g annotate:install
+bin/rake annotate_models
+```
 
 ### Initial testing
 
-* RAILS_ENV=test bin/rake db:create
-* RAILS_ENV=test bin/rake db:migrate
+```bash
+RAILS_ENV=test bin/rake db:create
+RAILS_ENV=test bin/rake db:migrate
+```
 
 ### User registration
 
-* bin/rails g integration_test user_registration
-* bin/rails g migration add_username_to_users
+```bash
+bin/rails g integration_test user_registration
+bin/rails g migration add_username_to_users
+```
 
 ### User session
 
-* bin/rails g integration_test user_session
+```bash
+bin/rails g integration_test user_session
+```
 
 ## Account recovering
 
-* bin/rails g integration_test account_recovering
+```bash
+bin/rails g integration_test account_recovering
+```
 
 ## Subclonnit creation
 
-* bin/rails g integration_test subclonnit_creation
-* bin/rails g scaffold subclonnit name description:text # A base for the implementation, then rm all the cruft
-* bin/rails g model moderator user:belongs_to subclonnit:belongs_to
-* RAILS_ENV=test bin/rake db:migrate
-* bin/rails g migration add_unique_index_to_subclonnit_name
+```bash
+bin/rails g integration_test subclonnit_creation
+
+# A base for the implementation, then rm all the cruft
+bin/rails g scaffold subclonnit name description:text
+bin/rails g model moderator user:belongs_to subclonnit:belongs_to
+RAILS_ENV=test bin/rake db:migrate
+bin/rails g migration add_unique_index_to_subclonnit_name
+```
 
 ## Tasks
 
