@@ -5,7 +5,7 @@ require 'test_helper'
 class SubclonnitCreationTest < ActionDispatch::IntegrationTest
   test 'success subclonnit creation' do
     # User needs to be authenticated
-    sign_in
+    session_user = sign_in
 
     get '/subclonnits/new'
     assert_response :success
