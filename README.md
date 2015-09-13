@@ -58,6 +58,7 @@
 * bin/rails g scaffold subclonnit name description:text # A base for the implementation, then rm all the cruft
 * bin/rails g model moderator user:belongs_to subclonnit:belongs_to
 * RAILS_ENV=test bin/rake db:migrate
+* bin/rails g migration add_unique_index_to_subclonnit_name
 
 ## Tasks
 
