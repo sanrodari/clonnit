@@ -60,13 +60,13 @@ bin/rails g migration add_username_to_users
 bin/rails g integration_test user_session
 ```
 
-## Account recovering
+### Account recovering
 
 ```bash
 bin/rails g integration_test account_recovering
 ```
 
-## Subclonnit creation
+### Subclonnit creation
 
 ```bash
 bin/rails g integration_test subclonnit_creation
@@ -76,6 +76,16 @@ bin/rails g scaffold subclonnit name description:text
 bin/rails g model moderator user:belongs_to subclonnit:belongs_to
 RAILS_ENV=test bin/rake db:migrate
 bin/rails g migration add_unique_index_to_subclonnit_name
+```
+
+### Post creation
+
+```bash
+bin/rails g integration_test post_creation
+
+# A base for the implementation, then rm all the cruft
+bin/rails g scaffold post title url text:text user:belongs_to subclonnit:belongs_to
+RAILS_ENV=test bin/rake db:migrate
 ```
 
 ## Tasks
