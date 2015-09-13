@@ -108,4 +108,42 @@ class PostCreationTest < ActionDispatch::IntegrationTest
     assert_includes post.errors.messages[:title],
                     I18n.t('errors.messages.blank')
   end
+
+  test 'post\'s url is optional' do
+    session_user = sign_in
+
+    test_name        = 'test name'
+    test_description = 'test description'
+
+    subclonnit = Subclonnit.create! name:        test_name,
+                                    description: test_description
+
+    # Get the form to create the post
+    get "/subclonnits/#{subclonnit.id}/posts/new"
+    assert_response :success
+
+    test_title = 'test title'
+    test_url   = ''
+    test_text  = 'Lorem ipsum dolor sit amet, falli altera ei quo.'
+
+    assert_difference('Post.count', 1) do
+      post "/subclonnits/#{subclonnit.id}/posts", post: {
+        title: test_title,
+        url:   test_url,
+        text:  test_text
+      }
+    end
+
+    post = assigns[:post]
+
+    # Assert flash message
+    assert_equal I18n.t('posts.successfully_created'), flash[:notice]
+
+    # Post should has the right attributes
+    assert_equal subclonnit.id, post.subclonnit.id
+    assert_equal session_user.id, post.user.id
+    assert_equal test_title, post.title
+    assert_equal test_url, post.url
+    assert_equal test_text, post.text
+  end
 end

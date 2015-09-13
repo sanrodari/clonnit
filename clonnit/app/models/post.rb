@@ -22,6 +22,6 @@ class Post < ActiveRecord::Base
   belongs_to :subclonnit
 
   # Validations
-  validates :url,   format: URI.regexp(%w(http https))
+  validates :url,   format: URI.regexp(%w(http https)), unless: 'url.blank?'
   validates :title, presence: true
 end
