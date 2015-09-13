@@ -17,7 +17,7 @@ class CreatePostService
 
     post.save!
     [:success, post]
-  rescue _
+  rescue => _
     [:error, post]
   end
 end

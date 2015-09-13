@@ -20,4 +20,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :subclonnit
+
+  # Validations
+  validates :url, format: URI.regexp(%w(http https))
 end

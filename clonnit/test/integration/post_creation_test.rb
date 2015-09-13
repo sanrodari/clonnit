@@ -46,4 +46,35 @@ class PostCreationTest < ActionDispatch::IntegrationTest
     assert_equal test_url, post.url
     assert_equal test_text, post.text
   end
+
+  test 'post should has a valid url' do
+    _ = sign_in
+
+    test_name        = 'test name'
+    test_description = 'test description'
+
+    subclonnit = Subclonnit.create! name:        test_name,
+                                    description: test_description
+
+    # Get the form to create the post
+    get "/subclonnits/#{subclonnit.id}/posts/new"
+    assert_response :success
+
+    test_title = 'test title'
+    test_url   = 'not a valid url'
+    test_text  = 'Lorem ipsum dolor sit amet, falli altera ei quo.'
+
+    assert_difference('Post.count', 0) do
+      post "/subclonnits/#{subclonnit.id}/posts", post: {
+        title: test_title,
+        url:   test_url,
+        text:  test_text
+      }
+    end
+
+    # Assert error message
+    post = assigns[:post]
+    assert_includes post.errors.messages[:url],
+                    I18n.t('errors.messages.invalid')
+  end
 end
