@@ -1,6 +1,5 @@
 # Subclonnits controller
 class SubclonnitsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_subclonnit, only: [:show]
 
   # GET /subclonnits/1
