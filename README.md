@@ -1,3 +1,18 @@
+## Used devise modules
+
+* Database Authenticatable
+* Recoverable
+* Registerable
+* Rememberable
+* Timeoutable
+* Validatable
+
+## Service orientation
+
+* http://adamniedzielski.github.io/blog/2014/11/25/my-take-on-services-in-rails/
+* https://blog.engineyard.com/2014/keeping-your-rails-controllers-dry-with-services
+* https://github.com/gitlabhq/gitlabhq/tree/master/app/services
+
 ## Commands
 
 ### Project creation
@@ -37,14 +52,12 @@
 
 * bin/rails g integration_test account_recovering
 
-## Used devise modules
+## Subclonnit creation
 
-* Database Authenticatable
-* Recoverable
-* Registerable
-* Rememberable
-* Timeoutable
-* Validatable
+* bin/rails g integration_test subclonnit_creation
+* bin/rails g scaffold subclonnit name description:text # A base for the implementation, then rm all the cruft
+* bin/rails g model moderator user:belongs_to subclonnit:belongs_to
+* RAILS_ENV=test bin/rake db:migrate
 
 ## Tasks
 
