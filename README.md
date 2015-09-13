@@ -89,6 +89,14 @@ RAILS_ENV=test bin/rake db:migrate
 bin/rails g migration add_not_null_title_to_posts
 ```
 
+### Post voting
+
+```bash
+bin/rails g integration_test post_voting
+bin/rails g model upvote post:belongs_to user:belongs_to
+RAILS_ENV=test bin/rake db:migrate
+```
+
 ## Tasks
 
 https://trello.com/b/UoSGhf1y/clonnit

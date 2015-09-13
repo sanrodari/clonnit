@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to "Upvote", [:upvote, @subclonnit, @post], remote: true, method: :post, id: 'upvote_link' %>
+
 <p>
   <strong>Title:</strong>
   <%= @post.title %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913182437) do
+ActiveRecord::Schema.define(version: 20150913204514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,16 @@ ActiveRecord::Schema.define(version: 20150913182437) do
 
   add_index "subclonnits", ["name"], name: "index_subclonnits_on_name", unique: true, using: :btree
 
+  create_table "upvotes", force: :cascade do |t|
+    t.integer  "post_id",    null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "upvotes", ["post_id"], name: "index_upvotes_on_post_id", using: :btree
+  add_index "upvotes", ["user_id"], name: "index_upvotes_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -72,4 +82,6 @@ ActiveRecord::Schema.define(version: 20150913182437) do
   add_foreign_key "moderators", "users"
   add_foreign_key "posts", "subclonnits"
   add_foreign_key "posts", "users"
+  add_foreign_key "upvotes", "posts"
+  add_foreign_key "upvotes", "users"
 end

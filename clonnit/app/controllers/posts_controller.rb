@@ -1,6 +1,6 @@
 # Posts controller
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :destroy]
+  before_action :set_post, only: [:show, :upvote, :destroy]
   before_action :set_subclonnit
 
   # GET /subclonnits/:subclonnit_id/posts/1
@@ -24,6 +24,14 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  # POST /subclonnits/:subclonnit_id/posts/:id/upvote
+  def upvote
+    _, @upvote = UpvotePostService.new(
+      user: current_user,
+      post: @post
+    ).call
   end
 
   # DELETE /subclonnits/:subclonnit_id/posts/1
