@@ -7,15 +7,18 @@ class SubclonnitCreationTest < ActionDispatch::IntegrationTest
     # User needs to be authenticated
     session_user = sign_in
 
+    # Get the form to create the subclonnit
     get '/subclonnits/new'
     assert_response :success
 
     test_name        = 'test name'
     test_description = 'test description'
-    post '/subclonnits', subclonnit: {
-      name:        test_name,
-      description: test_description
-    }
+    assert_difference('Subclonnit.count', 1) do
+      post '/subclonnits', subclonnit: {
+        name:        test_name,
+        description: test_description
+      }
+    end
 
     subclonnit = assigns[:subclonnit]
 
