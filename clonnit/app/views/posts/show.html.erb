@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to "Upvote", [:upvote, @subclonnit, @post], remote: true, method: :post, id: 'upvote_link' %>
+<%= link_to "Upvote",
+    [:toggle_upvote, @subclonnit, @post],
+    remote: true, method: :post, id: 'upvote_link',
+    class: upvote_class(current_user, @post) %>
+
+<%= link_to "Downvote",
+    [:toggle_downvote, @subclonnit, @post],
+    remote: true, method: :post, id: 'downvote_link',
+    class: downvote_class(current_user, @post) %>
 
 <p>
   <strong>Title:</strong>

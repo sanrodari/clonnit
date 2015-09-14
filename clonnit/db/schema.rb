@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913204514) do
+ActiveRecord::Schema.define(version: 20150913211633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "downvotes", force: :cascade do |t|
+    t.integer  "post_id",    null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "downvotes", ["post_id"], name: "index_downvotes_on_post_id", using: :btree
+  add_index "downvotes", ["user_id"], name: "index_downvotes_on_user_id", using: :btree
 
   create_table "moderators", force: :cascade do |t|
     t.integer  "user_id"
@@ -78,6 +88,8 @@ ActiveRecord::Schema.define(version: 20150913204514) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "downvotes", "posts"
+  add_foreign_key "downvotes", "users"
   add_foreign_key "moderators", "subclonnits"
   add_foreign_key "moderators", "users"
   add_foreign_key "posts", "subclonnits"

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   resources :subclonnits, only: [:show, :new, :create] do
     resources :posts, only: [:show, :new, :create] do
-      post 'upvote', on: :member
+      post 'toggle_upvote',   on: :member
+      post 'toggle_downvote', on: :member
     end
   end
 end
