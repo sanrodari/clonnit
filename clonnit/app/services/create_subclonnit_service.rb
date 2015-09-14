@@ -14,7 +14,8 @@ class CreateSubclonnitService
       Moderator.create!(subclonnit: subclonnit, user: @user)
     end
     [:success, subclonnit]
-  rescue => _
+  rescue => e
+    Rails.logger.debug e
     [:error, subclonnit]
   end
 end

@@ -17,7 +17,8 @@ class CreatePostService
 
     post.save!
     [:success, post]
-  rescue => _
+  rescue => e
+    Rails.logger.debug e
     [:error, post]
   end
 end
