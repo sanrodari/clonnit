@@ -54,4 +54,50 @@ class PostDeletionTest < ActionDispatch::IntegrationTest
     assert_equal I18n.t('posts.successfully_destroyed'),
                  flash[:notice]
   end
+
+  test 'forbids post deletion by a non-moderator' do
+    # User sign in
+    moderator_user = sign_in
+
+    # User creates a subclonnit and becomes the first mod
+    test_name        = 'test name'
+    test_description = 'test description'
+    assert_difference('Subclonnit.count', 1) do
+      post '/subclonnits', subclonnit: {
+        name:        test_name,
+        description: test_description
+      }
+    end
+
+    subclonnit = assigns[:subclonnit]
+
+    # User sign out
+    delete '/users/sign_out'
+
+    # Another user sign in
+    another = User.create! username: 'another',
+                           email:    'another@example.com',
+                           password: '12345678'
+
+    sign_in another
+
+    # Another user creates a post within the created subclonnit
+    test_title = 'test title'
+    test_url   = 'http://example.com/path'
+    test_text  = 'Lorem ipsum dolor sit amet, falli altera ei quo.'
+
+    assert_difference('Post.count', 1) do
+      post "/subclonnits/#{subclonnit.id}/posts", post: {
+        title: test_title,
+        url:   test_url,
+        text:  test_text
+      }
+    end
+    post = assigns[:post]
+
+    assert_difference('Post.count', 0) do
+      delete "/subclonnits/#{subclonnit.id}/posts/#{post.id}"
+    end
+    assert_response :forbidden
+  end
 end
