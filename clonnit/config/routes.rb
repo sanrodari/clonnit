@@ -6,5 +6,7 @@ Rails.application.routes.draw do
       post 'toggle_upvote',   on: :member
       post 'toggle_downvote', on: :member
     end
+
+    resources :moderators, only: [:index, :new, :create, :destroy]
   end
 end

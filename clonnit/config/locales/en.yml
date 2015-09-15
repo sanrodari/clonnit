@@ -25,3 +25,5 @@ en:
     successfully_created: "Subclonnit was successfully created."
   posts:
     successfully_created: "Post was successfully created."
+  moderators:
+    successfully_created: "Moderator was successfully created."

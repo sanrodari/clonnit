@@ -99,6 +99,12 @@ bin/rails g model downvote post:belongs_to user:belongs_to
 RAILS_ENV=test bin/rake db:migrate
 ```
 
+### Add moderator
+
+```bash
+bin/rails g integration_test add_moderator
+```
+
 ## Tasks
 
 https://trello.com/b/UoSGhf1y/clonnit
