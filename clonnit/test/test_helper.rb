@@ -13,12 +13,12 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  def sign_in
+  def sign_in(session_user = nil)
     session_user = User.create!(
       email:    'test_email@example.com',
       username: 'test_username',
       password: '12345678'
-    )
+    ) if session_user.nil?
 
     post '/users/sign_in', user: {
       username: session_user.username,
