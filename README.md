@@ -105,6 +105,13 @@ RAILS_ENV=test bin/rake db:migrate
 bin/rails g integration_test add_moderator
 ```
 
+### Delete post
+
+```bash
+bin/rails g integration_test post_deletion
+```
+
+
 ## Tasks
 
 https://trello.com/b/UoSGhf1y/clonnit

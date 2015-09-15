@@ -44,10 +44,22 @@ class PostsController < ApplicationController
 
   # DELETE /subclonnits/:subclonnit_id/posts/1
   def destroy
-    # TODO Implement this for the mods
-    fail 'TODO'
-    # @post.destroy
-    # redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    result, @post = DestroyPostService.new(
+      user: current_user,
+      post: @post
+    ).call
+
+    case result
+    when :success
+      redirect_to subclonnit_path(@subclonnit),
+                  notice: t('posts.successfully_destroyed')
+    when :forbidden
+      render status: :forbidden, nothing: true
+    when :error
+      # Unexpected case
+      redirect_to subclonnit_path(@subclonnit),
+                  notice: @post.errors.full_messages.join(', ')
+    end
   end
 
   private

@@ -12,7 +12,7 @@
 
 User story format: "As a <role>, I want <goal/desire>[ so that <benefit>]"
 
-1. As a eu, I want to visualize the front page.
+1. As a eu, I want to visualize the front page
 2. As a anon, I want to register to clonnit so that I can have an account in it
 3. As a anon, I want to sign in to clonnit so that I can have a user session
 4. As a anon, I want to be able to recover my account giving my username
