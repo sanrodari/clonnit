@@ -49,4 +49,49 @@ class AddModeratorTest < ActionDispatch::IntegrationTest
     assert Moderator.exists? subclonnit: subclonnit,
                              user:       new_moderator
   end
+
+  test 'subclonnit non-moderator can\'t add a moderator' do
+    _ = sign_in
+
+    non_moderator = User.create! username: 'non_moderator',
+                                 email:    'non_moderator@example.com',
+                                 password: '12345678'
+
+    # Create a subclonnit with the session_user as its
+    # first moderator
+    test_name        = 'test name'
+    test_description = 'test description'
+    assert_difference('Subclonnit.count', 1) do
+      post '/subclonnits', subclonnit: {
+        name:        test_name,
+        description: test_description
+      }
+    end
+    subclonnit = assigns[:subclonnit]
+
+    # Sign out
+    delete '/users/sign_out'
+
+    open_session do |session|
+      session.post '/users/sign_in', user: {
+        username: non_moderator.username,
+        password: non_moderator.password
+      }
+
+      session.get "/subclonnits/#{subclonnit.id}/moderators"
+      session.assert_response :success
+
+      # Refute that the non-moderator can add another mod
+      refute session.assigns[:can_add]
+
+      # Try to add the new mod
+      session.assert_difference('Moderator.count', 0) do
+        session.post "/subclonnits/#{subclonnit.id}/moderators", moderator: {
+          user_id: non_moderator.id
+        }
+
+        session.assert_response :forbidden
+      end
+    end
+  end
 end

@@ -29,7 +29,7 @@ class ModeratorsController < ApplicationController
       redirect_to subclonnit_moderators_path(@subclonnit),
                   notice: t('moderators.successfully_created')
     when :forbidden
-      # TODO Send forbidden status code
+      render status: :forbidden, nothing: true
     else
       render :new
     end
