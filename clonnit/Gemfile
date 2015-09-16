@@ -28,6 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Authentication
 gem 'devise'
 
+# Pagination
+gem 'kaminari'
+
 group :development do
   # Quiet serving assets
   gem 'quiet_assets'

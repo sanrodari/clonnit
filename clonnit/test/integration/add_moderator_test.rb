@@ -10,7 +10,7 @@ class AddModeratorTest < ActionDispatch::IntegrationTest
                                  email:    'new_moderator@example.com',
                                  password: '12345678'
 
-    # Create a subreddit with the session_user as its
+    # Create a subclonnit with the session_user as its
     # first moderator
     test_name        = 'test name'
     test_description = 'test description'

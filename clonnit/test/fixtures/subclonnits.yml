@@ -14,11 +14,9 @@
 #  index_subclonnits_on_name  (name) UNIQUE
 #
 
-class Subclonnit < ActiveRecord::Base
-  validates :name,
-            uniqueness: { case_sensitive: false },
-            presence: true
-
-  # Default subclonnits
-  scope :default, -> { where(default: true) }
-end
+<% (1..10).each do |i| %>
+default_subclonnit_<%= i %>:
+ name: name - <%= i %>
+ description: name - <%= i %>
+ default: true
+<% end %>

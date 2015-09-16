@@ -1,0 +1,16 @@
+<div style="margin-top: 10px">
+  <div class="number"><%= number %></div>
+  <div class="votes"><%= post.total_votes %></div>
+  <div class="title">
+    <div class="url">
+      <% if post.url.present? %>
+        <%= link_to post.title, post.url, target: '_blank' %>
+      <% else %>
+        <%= link_to post.title, [post.subclonnit, post] %>
+      <% end %>
+    </div>
+    <div class="subclonnit">
+      <%= link_to post.subclonnit.name, post.subclonnit %>
+    </div>
+  </div>
+</div>

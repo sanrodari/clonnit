@@ -111,10 +111,20 @@ bin/rails g integration_test add_moderator
 bin/rails g integration_test post_deletion
 ```
 
+### Front page
 
-## Tasks
+```bash
+bin/rails g integration_test front_page
+bin/rails g controller frontpage show
+bin/rails g migration add_default_to_subclonnit default:boolean
+bin/rails g kaminari:config
+bin/rails g kaminari:views default
+```
 
-https://trello.com/b/UoSGhf1y/clonnit
+## TODOs
+
+* [ ] Improve frontpage algorithm
+* [ ] Sanitize post url from user input (To avoid xss, etc.)
 
 ## User stories
 

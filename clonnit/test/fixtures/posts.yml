@@ -17,17 +17,11 @@
 #  index_posts_on_user_id        (user_id)
 #
 
-class Post < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :subclonnit
-  has_many :upvotes
-  has_many :downvotes
-
-  # Validations
-  validates :url,   format: URI.regexp(%w(http https)), unless: 'url.blank?'
-  validates :title, presence: true
-
-  def total_votes
-    upvotes.size - downvotes.size
-  end
-end
+<% (1..10).each do |i| %>
+  <% (1..5).each do |ii| %>
+post_for_default_subclonnit_<%= "#{i}_#{ii}" %>:
+ title: title - <%= i %>
+ text: text - <%= i %>
+ subclonnit: default_subclonnit_<%= i %>
+ <% end %>
+<% end %>
