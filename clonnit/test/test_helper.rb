@@ -15,9 +15,10 @@ class ActiveSupport::TestCase
 
   def sign_in(session_user = nil)
     session_user = User.create!(
-      email:    'test_email@example.com',
-      username: 'test_username',
-      password: '12345678'
+      email:       'test_email@example.com',
+      username:    'test_username',
+      password:    '12345678',
+      subclonnits: Subclonnit.default
     ) if session_user.nil?
 
     post '/users/sign_in', user: {

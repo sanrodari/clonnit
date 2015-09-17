@@ -6,7 +6,7 @@ class FrontpageController < ApplicationController
   def show
     page = params[:page].nil? ? 1 : params[:page]
     _, @posts = GetFrontpagePageService.new(
-      page: page, subclonnits: Subclonnit.default
+      page: page, user: current_user
     ).call
   end
 end

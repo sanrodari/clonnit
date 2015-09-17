@@ -2,7 +2,10 @@
 class GetFrontpagePageService
   def initialize(params)
     @page        = params[:page]
-    @subclonnits = params[:subclonnits]
+    @user        = params[:user]
+
+    # For anon default, for an authenticated its subclonnits
+    @subclonnits = @user.nil? ? Subclonnit.default : @user.subclonnits
   end
 
   def call
