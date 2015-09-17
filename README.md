@@ -131,6 +131,7 @@ mv app/views/devise/registrations app/views/users
 
 * [ ] Improve frontpage list algorithm
 * [ ] Sanitize post url from user input (To avoid xss, etc.)
+* [ ] More test coverage
 
 ## User stories
 

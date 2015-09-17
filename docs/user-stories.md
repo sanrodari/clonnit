@@ -12,13 +12,13 @@
 
 User story format: "As a <role>, I want <goal/desire>[ so that <benefit>]"
 
-1. As a eu, I want to visualize the front page
-2. As a anon, I want to register to clonnit so that I can have an account in it
-3. As a anon, I want to sign in to clonnit so that I can have a user session
-4. As a anon, I want to be able to recover my account giving my username
-5. As a au, I want to create a subclonnit and become its first mod so that I can create and maintain a community
-6. As a au, I want to create a post within a subclonnit so that I can share my content with others
-7. As a au, I want to upvote/downvote a post so that I can enforce good content
-8. As a au, I want to subscribe to a subclonnit so that I can customize my frontpage
-9. As a mu, I want to assign new mods to a subclonnit so that I can share the moderator labors
-10. As a mu, I want to delete a post from one of my moderated subclonnits
+* [x] As a eu, I want to visualize the front page
+* [x] As a anon, I want to register to clonnit so that I can have an account in it
+* [x] As a anon, I want to sign in to clonnit so that I can have a user session
+* [x] As a anon, I want to be able to recover my account giving my username
+* [x] As a au, I want to create a subclonnit and become its first mod so that I can create and maintain a community
+* [x] As a au, I want to create a post within a subclonnit so that I can share my content with others
+* [x] As a au, I want to upvote/downvote a post so that I can enforce good content
+* [ ] As a au, I want to subscribe to a subclonnit so that I can customize my frontpage
+* [x] As a mu, I want to assign new mods to a subclonnit so that I can share the moderator labors
+* [x] As a mu, I want to delete a post from one of my moderated subclonnits
