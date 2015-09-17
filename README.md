@@ -119,11 +119,17 @@ bin/rails g controller frontpage show
 bin/rails g migration add_default_to_subclonnit default:boolean
 bin/rails g kaminari:config
 bin/rails g kaminari:views default
+
+bin/rails g model subscription user:belongs_to subclonnit:belongs_to
+RAILS_ENV=test bin/rake db:migrate
+bin/rails g devise:controllers users -c registrations
+mkdir app/views/users
+mv app/views/devise/registrations app/views/users
 ```
 
 ## TODOs
 
-* [ ] Improve frontpage algorithm
+* [ ] Improve frontpage list algorithm
 * [ ] Sanitize post url from user input (To avoid xss, etc.)
 
 ## User stories

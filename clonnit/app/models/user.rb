@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
          authentication_keys: [:username],
          reset_password_keys: [:username]
 
+  # Relations
+  has_many :subscriptions
+  has_many :subclonnits, through: :subscriptions
+
   # Validations
   validates :username, presence: true
 end

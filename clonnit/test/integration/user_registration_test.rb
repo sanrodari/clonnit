@@ -28,6 +28,10 @@ class UserRegistrationTest < ActionDispatch::IntegrationTest
     # Assert is created with its params
     created_user = User.find_by(username: @test_username)
     assert_equal @test_email, created_user.email
+
+    # Default subclonnits born with the newly created user
+    assert_equal Subclonnit.default.map(&:id).to_set,
+                 created_user.subclonnits.map(&:id).to_set
   end
 
   test 'wrong password confirmation' do

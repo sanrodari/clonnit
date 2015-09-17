@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'frontpage/show'
-
   root 'frontpage#show'
-  devise_for :users
+
+  get 'frontpage/show'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 
   resources :subclonnits, only: [:show, :new, :create] do
     resources :posts, only: [:show, :new, :create, :destroy] do
