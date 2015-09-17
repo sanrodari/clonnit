@@ -28,3 +28,5 @@ en:
     successfully_destroyed: 'Post was successfully destroyed.'
   moderators:
     successfully_created: "Moderator was successfully created."
+  subscriptions:
+    successfully_created: "Subscription was successfully created."

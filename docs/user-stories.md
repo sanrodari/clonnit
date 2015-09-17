@@ -19,6 +19,6 @@ User story format: "As a <role>, I want <goal/desire>[ so that <benefit>]"
 * [x] As a au, I want to create a subclonnit and become its first mod so that I can create and maintain a community
 * [x] As a au, I want to create a post within a subclonnit so that I can share my content with others
 * [x] As a au, I want to upvote/downvote a post so that I can enforce good content
-* [ ] As a au, I want to subscribe to a subclonnit so that I can customize my frontpage
+* [x] As a au, I want to subscribe to a subclonnit so that I can customize my frontpage
 * [x] As a mu, I want to assign new mods to a subclonnit so that I can share the moderator labors
 * [x] As a mu, I want to delete a post from one of my moderated subclonnits

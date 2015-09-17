@@ -127,6 +127,12 @@ mkdir app/views/users
 mv app/views/devise/registrations app/views/users
 ```
 
+### Subclonnit subscription
+
+```bash
+bin/rails g integration_test subclonnit_subscription
+```
+
 ## TODOs
 
 * [ ] Improve frontpage list algorithm
