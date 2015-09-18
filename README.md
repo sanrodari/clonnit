@@ -2,6 +2,12 @@
 
 * A decent test suite
 
+## User stories
+
+[User stories](docs/user-stories.md)
+
+1: docs/user-stories.md
+
 ## Used devise modules
 
 * Database Authenticatable
@@ -145,9 +151,3 @@ bin/rails g integration_test subclonnit_subscription
 * [ ] Front end polishing
 * [ ] Soft deleting for models
 * [ ] Not to use id for urls, use something like https://github.com/norman/friendly_id or some custom solution
-
-## User stories
-
-[User stories][1]
-
-1: docs/user-stories.md
