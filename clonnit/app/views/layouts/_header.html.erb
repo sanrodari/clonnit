@@ -12,9 +12,11 @@
     <div id="navbar" class="navbar-collapse collapse">
       <form class="navbar-form navbar-right">
         <% if user_signed_in? %>
+          <%= link_to('New subclonnit', new_subclonnit_path, class: 'btn btn-success') %>
           <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-success') %>
         <% else %>
-          <%= link_to('Sign in', new_user_session_path, class: 'btn btn-success')  %>
+          <%= link_to('Sign in', new_user_session_path, class: 'btn btn-success') %>
+          <%= link_to('Register', new_user_registration_path, class: 'btn btn-success')  %>
         <% end %>
       </form>
     </div><!--/.navbar-collapse -->
