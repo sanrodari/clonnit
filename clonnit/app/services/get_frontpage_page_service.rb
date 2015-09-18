@@ -12,7 +12,7 @@ class GetFrontpagePageService
     # TODO Implement a more sophisticated algorithm
     [:success,
      Post
-       .order(:created_at)
+       .order(created_at: :desc)
        .joins(:subclonnit)
        .where(subclonnits: { id: @subclonnits })
        .includes(:subclonnit) # Includes to avoid n + 1 queries
