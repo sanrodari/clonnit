@@ -138,6 +138,7 @@ bin/rails g integration_test subclonnit_subscription
 * [ ] Improve frontpage list algorithm
 * [ ] Sanitize post url from user input (To avoid xss, etc.)
 * [ ] More test coverage
+* [ ] Front end polishing
 
 ## User stories
 
