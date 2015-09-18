@@ -1,6 +1,8 @@
 ## Features
 
 * A decent test suite
+* Travis CI [![Build Status](https://travis-ci.org/sanrodari/clonnit.svg?branch=master)](https://travis-ci.org/sanrodari/clonnit)
+* Use of Vagrant for consistent development environment provisioning [Vagrantfile](Vagrantfile), [provision.sh](provision.sh)
 
 ## User stories
 
