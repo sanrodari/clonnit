@@ -1,3 +1,7 @@
+## Features
+
+* A decent test suite
+
 ## Used devise modules
 
 * Database Authenticatable
@@ -13,7 +17,7 @@
 * https://blog.engineyard.com/2014/keeping-your-rails-controllers-dry-with-services
 * https://github.com/gitlabhq/gitlabhq/tree/master/app/services
 
-## Commands
+## Commands used to create this project
 
 ### Project creation
 
