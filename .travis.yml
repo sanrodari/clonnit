@@ -1,6 +1,6 @@
 language: ruby
 script: "cd clonnit; bundle exec rake"
 before_install:
-  - "bin/bundle"
+  - "cd clonnit; bin/bundle"
 rvm:
  - "2.2.3"
