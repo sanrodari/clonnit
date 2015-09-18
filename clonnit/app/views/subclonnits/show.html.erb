@@ -11,3 +11,5 @@
 </p>
 
 <%= link_to('New post', new_subclonnit_post_path(@subclonnit), class: 'btn btn-success') %>
+
+<%= link_to('Subscribe', user_subscriptions_path(current_user, subscription: {subclonnit_id: @subclonnit.id}), method: :post, class: 'btn btn-success') %>
