@@ -6,8 +6,6 @@
 
 [User stories](docs/user-stories.md)
 
-1: docs/user-stories.md
-
 ## Used devise modules
 
 * Database Authenticatable
