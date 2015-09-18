@@ -1,6 +1,7 @@
 language: ruby
 before_install:
   - "cd clonnit"
+before_script:
   - "RAILS_ENV=test bin/rake db:create"
   - "RAILS_ENV=test bin/rake db:migrate"
 rvm:
