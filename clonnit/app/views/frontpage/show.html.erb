@@ -1,6 +1,8 @@
-<h1>Frontpage</h1>
-<% @posts.each_with_index do |post, index| %>
-  <%= render partial: 'post', locals: {post: post, number: index + 1} %>
-<% end %>
+<div class="container-fluid">
+  <% @posts.each_with_index do |post, index| %>
+    <%= render partial: 'post', locals:
+               {post: post, number: calculate_number(@posts, index)} %>
+  <% end %>
 
-<%= paginate @posts %>
+  <%= paginate @posts %>
+</div>

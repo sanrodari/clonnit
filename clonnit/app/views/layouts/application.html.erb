@@ -3,10 +3,21 @@
 <head>
   <title>Clonnit</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS includes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <!-- JS includes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<%= render 'layouts/header' %>
 
 <%= yield %>
 

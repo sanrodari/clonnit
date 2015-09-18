@@ -1,7 +1,23 @@
-<div style="margin-top: 10px">
-  <div class="number"><%= number %></div>
-  <div class="votes"><%= post.total_votes %></div>
-  <div class="title">
+<div class="row">
+  <div class="votes col-md-2">
+    <span><%= number %></span>
+
+    <%= link_to [:toggle_upvote, post.subclonnit, post],
+    remote: true, method: :post, id: 'upvote_link',
+    class: upvote_class(current_user, post) do %>
+      <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+    <% end %>
+
+    <%= post.total_votes %>
+
+    <%= link_to [:toggle_downvote, post.subclonnit, post],
+        remote: true, method: :post, id: 'downvote_link',
+        class: downvote_class(current_user, post) do %>
+        <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+    <% end %>
+
+  </div>
+  <div class="title col-md-10">
     <div class="url">
       <% if post.url.present? %>
         <%= link_to post.title, post.url, target: '_blank' %>
