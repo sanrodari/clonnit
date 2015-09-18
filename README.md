@@ -139,6 +139,8 @@ bin/rails g integration_test subclonnit_subscription
 * [ ] Sanitize post url from user input (To avoid xss, etc.)
 * [ ] More test coverage
 * [ ] Front end polishing
+* [ ] Soft deleting for models
+* [ ] Not to use id for urls, use something like https://github.com/norman/friendly_id or some custom solution
 
 ## User stories
 
