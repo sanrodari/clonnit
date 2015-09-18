@@ -27,6 +27,9 @@
     </div>
     <div class="subclonnit">
       <%= link_to post.subclonnit.name, post.subclonnit %>
+      <% if DestroyPostService.can_destroy?(current_user, post) %>
+        <%= link_to 'Destroy', subclonnit_post_path(post.subclonnit, post), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
   </div>
 </div>
