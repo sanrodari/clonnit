@@ -8,7 +8,7 @@
       <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
     <% end %>
 
-    <%= post.total_votes %>
+    <span id="total_votes_<%= post.id %>"><%= post.total_votes %></span>
 
     <%= link_to [:toggle_downvote, post.subclonnit, post],
         remote: true, method: :post, id: 'downvote_link',

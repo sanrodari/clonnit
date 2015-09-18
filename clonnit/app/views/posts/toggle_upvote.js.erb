@@ -1,2 +1,3 @@
 $('a#upvote_link').toggleClass('upvoted');
 $('a#downvote_link').removeClass('downvoted');
+$('span#total_votes_<%= @post.id %>').html('<%= @post.total_votes %>');
