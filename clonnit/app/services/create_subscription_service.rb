@@ -1,9 +1,9 @@
 # Service to add a subscription
 class CreateSubscriptionService
   def initialize(params)
-    @session_user     = params['session_user']
-    @subscribing_user = params['subscribing_user']
-    @subclonnit_id    = params['subclonnit_id']
+    @session_user     = params[:session_user]
+    @subscribing_user = params[:subscribing_user]
+    @subclonnit_id    = params[:subclonnit_id]
   end
 
   def call
