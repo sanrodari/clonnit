@@ -22,7 +22,7 @@ class SubclonnitSubscriptionTest < ActionDispatch::IntegrationTest
 
     subclonnit = Subclonnit.create! name:        'Not default',
                                     description: 'Not default subclonnit',
-                                    description: false
+                                    default:     false
 
     post "/users/#{session_user.id}/subscriptions", subscription: {
       subclonnit_id: subclonnit.id
