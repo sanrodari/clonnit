@@ -152,3 +152,10 @@ bin/rails g integration_test subclonnit_subscription
 * [ ] Front end polishing
 * [ ] Soft deleting for models
 * [ ] Not to use id for urls, use something like https://github.com/norman/friendly_id or some custom solution
+* [ ] Better tools integration: reek, flog, flay, rubycritic, possibly Code Climate or MetricFu, Simplecov
+* [ ] Use activejob (and decide a backend for the jobs) for email sending and other jobs
+* [ ] Refactor switch/if-elsif to using polymorphism/strategies
+* [ ] Refactor constants to use freeze to enforce immutability
+* [ ] Search for code/view duplications and refactor
+* [ ] Narrow exception handling in services
+* [ ] Add conventions, and CONTRIBUTING.md. Example https://github.com/gitlabhq/gitlabhq/blob/master/CONTRIBUTING.md
